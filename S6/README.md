@@ -70,5 +70,8 @@ To complete Part 2, follow these steps:
 
 
 ## Part 2 SOLUTION:
+![Parameters](blob:https://github.com/ddcccc03-032a-43d6-be3f-02d83ff5a1a8)
+
+![Validation Accuracy](blob:https://github.com/34f672ce-c230-4da9-b745-4b84f43ec754)
 
 
