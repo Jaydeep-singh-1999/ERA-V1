@@ -52,7 +52,16 @@ If your GitHub folder structure or file_names are messy, -100.
   2. Still we can see overfitting in the model which can be reduce by regularization techniques liek drop out later.
   3. Model parameters are high now is the time to finalize structure and squeeze it.
 
+### Model_3:
 
+#### Target:
+  1. To reduce parameter under 8K and achieve 99.4% consistent accuracy.
+#### Result:
+  1. Parameters: 7,836
+  2. Best Training Accuracy: 99.69%
+  3. Best Test Accuracy: 99.22%
+#### Analysis:
+  1. Overfitting in the model and Accuracy is stuck around 99%.
 
 
 
