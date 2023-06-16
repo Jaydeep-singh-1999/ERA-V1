@@ -80,7 +80,61 @@ If your GitHub folder structure or file_names are messy, -100.
 
 ### Model_5
 
+#### Target:
+  1. To reduce underfitting by reducing the dropout value to 0.5 and achieving 99.4% accuracy.
+#### Result:
+  1. Parameters: 7,836
+  2. Best Training Accuracy: 97.47%
+  3. Best Test Accuracy: 98.15%
+#### Analysis:
+  1. Underfitting model and accuracy is reduced further then previous model.
 
+### Model_6
+
+#### Target:
+  1. Reduce underfitting and achieving 99.4 % val accuracy.
+#### Result:
+  1. Parameters: 7,386
+  2. Best Training Accuracy: 99.45%
+  3. Best Test Accuracy: 99.23%
+#### Analysis:
+  1. Now model is perfect but still now achieving 99.4% accuracy but achieving around 99.2 % approx continuosly for 5 epchs.
+
+## Step 3:
+
+### Model_7
+
+#### Target:
+  1. To achieve 99.4% accuracy.
+#### Result:
+  1.Parameters: 6,360
+  2.Best Training Accuracy: 99.10
+  3.Best Test Accuracy:99.15
+#### Analysis:
+  1. Training accuracy is lower then test but they are very near to each other (it is underfitting but margin is less).
+  2. Due to gap layer parameters are reduced significantly now we can increase capacity again.
+
+### Model_8
+
+#### Target:
+  1. Achieve 99.4% accuracy and making training little more realxed removing dropout at some points ad decreasing value.
+#### Result:
+  1.Parameters: 7,386
+  2.Best Training Accuracy: 99.39%
+  3. Best Test Accuracy: 99.31%
+#### Analysis:
+  1. Model performance is improved now having test accracy aroung 99.25% and it is giving good results.
+  
+### Model_9
+
+#### Target:
+  1. Achieve 99.4% accuracy and increasing capacity further.
+#### Result:
+  1.Parameters: 7,959
+  2.Best Training Accuracy: 99.39%
+  3. Best Test Accuracy: 99.3%
+#### Analysis:
+  1. Model performance is improved now having test accracy around 99.3%  and constistent.
 
 
 
