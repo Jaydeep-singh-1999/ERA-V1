@@ -301,7 +301,7 @@ class Model_8(nn.Module):
                               nn.Conv2d(14,8,1)
                               )
     self.conv2=nn.Sequential(
-                             nn.Conv2d(8,14,3,padding=1), #8, 14
+                             nn.Conv2d(8,12,3,padding=1), #8, 14
                              nn.ReLU(),
                              nn.BatchNorm2d(12),
                              nn.Dropout(0.1),
@@ -389,8 +389,9 @@ class Model_10(nn.Module):
                              nn.Dropout(0.05),
                              nn.Conv2d(12,16,3),  #6, 18
                              nn.ReLU(),
-                             nn.BatchNorm2d,
-                             nn.Conv2d(16,16,3) , #4, 22
+                             nn.BatchNorm2d(16),
+                             #nn.MaxPool2d(2,2),  #4 , 19
+                             nn.Conv2d(16,16,3) , #4, 27
                              )
     self.trans2=nn.Sequential(nn.Conv2d(16,10,1))
     self.gap=nn.AvgPool2d(4)
@@ -403,4 +404,5 @@ class Model_10(nn.Module):
     x=self.gap(x)
     x=x.view(-1,10)
     return F.log_softmax(x,dim=-1)
+
 
