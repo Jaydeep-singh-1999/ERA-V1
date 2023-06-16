@@ -35,7 +35,7 @@ If your GitHub folder structure or file_names are messy, -100.
 #### Results:
   1. Parameters: 1,968,874
   2. Best Training Accuracy: 99.85
-  3. Best Test Accuracy: 99.18
+  3. Best Test Accuracy: 99.20
 #### Analysis:
   1. Model is not acheving 99.4 even and it is overfitting.
   2. Test Accuracy is stuck at 99.07 approx.
@@ -59,8 +59,8 @@ If your GitHub folder structure or file_names are messy, -100.
   1. To reduce parameter under 8K and achieve 99.4% consistent accuracy.
 #### Result:
   1. Parameters: 7,836
-  2. Best Training Accuracy: 99.69%
-  3. Best Test Accuracy: 99.22%
+  2. Best Training Accuracy: 99.76%
+  3. Best Test Accuracy: 99.14%
 #### Analysis:
   1. Overfitting in the model and Accuracy is stuck around 99%.
 
@@ -73,8 +73,8 @@ If your GitHub folder structure or file_names are messy, -100.
 
 #### Result:
   1. Parameters : 7,836
-  2. Best Training Accuracy: 99.28%
-  3. Best Test Accuracy: 99.31%
+  2. Best Training Accuracy: 99.23%
+  3. Best Test Accuracy: 99.38%
 #### Analysis:
   1. Model is underfitting due to drop out and training is hard through out the model.
 
@@ -84,8 +84,8 @@ If your GitHub folder structure or file_names are messy, -100.
   1. To reduce underfitting by reducing the dropout value to 0.5 and achieving 99.4% accuracy.
 #### Result:
   1. Parameters: 7,836
-  2. Best Training Accuracy: 97.47%
-  3. Best Test Accuracy: 98.15%
+  2. Best Training Accuracy: 97.7%
+  3. Best Test Accuracy: 98.28%
 #### Analysis:
   1. Underfitting model and accuracy is reduced further then previous model.
 
@@ -94,9 +94,9 @@ If your GitHub folder structure or file_names are messy, -100.
 #### Target:
   1. Reduce underfitting and achieving 99.4 % val accuracy.
 #### Result:
-  1. Parameters: 7,386
-  2. Best Training Accuracy: 99.45%
-  3. Best Test Accuracy: 99.23%
+  1. Parameters: 7,836
+  2. Best Training Accuracy: 99.41%
+  3. Best Test Accuracy: 99.27%
 #### Analysis:
   1. Now model is perfect but still now achieving 99.4% accuracy but achieving around 99.2 % approx continuosly for 5 epchs.
 
@@ -136,7 +136,17 @@ If your GitHub folder structure or file_names are messy, -100.
 #### Analysis:
   1. Model performance is improved now having test accracy around 99.3%  and constistent.
 
+### Model_10
 
+#### Target:
+  1. Achieve 99.4% accuracy and doing data agumentation and reducing dropout because of       
+    underfitting.
+#### Result:
+  1.Parameters: 7,959
+  2.Best Training Accuracy: 
+  3. Best Test Accuracy: 
+#### Analysis:
+  1.
 
 
  
