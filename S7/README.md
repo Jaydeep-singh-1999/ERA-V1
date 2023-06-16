@@ -43,6 +43,7 @@ If your GitHub folder structure or file_names are messy, -100.
 ### Model_2:
 #### Target:
   1. To acheive 99.4% val accuracy consistently
+  2. Using BatchNorm
 #### Results:
   1. Parameters: 1,968,874
   2. Best Training Accuracy: 100%
@@ -62,6 +63,24 @@ If your GitHub folder structure or file_names are messy, -100.
   3. Best Test Accuracy: 99.22%
 #### Analysis:
   1. Overfitting in the model and Accuracy is stuck around 99%.
+
+## Step 2:
+
+### Model_4:
+
+#### Target:
+  1. To reduce overfitting and achieving 99.4%  val accuracy.
+
+#### Result:
+  1. Parameters : 7,836
+  2. Best Training Accuracy: 99.28%
+  3. Best Test Accuracy: 99.31%
+#### Analysis:
+  1. Model is underfitting due to drop out and training is hard through out the model.
+
+### Model_5
+
+
 
 
 
