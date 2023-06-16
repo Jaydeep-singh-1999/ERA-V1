@@ -2,7 +2,7 @@ import torch.nn as nn
 import torch.nn.functional as F
 class Model_1(nn.Module):
   def __init__(self):
-    super(Net,self).__init__()
+    super(Model_1,self).__init__()
     self.conv1=nn.Sequential(nn.Conv2d(1,32,3),  #26, rf=3
                              nn.ReLU(),  
                              nn.Conv2d(32,64,3), #24 , 5
@@ -37,7 +37,7 @@ class Model_1(nn.Module):
 
 class Model_2(nn.Module):
   def __init__(self):
-    super(Net,self).__init__()
+    super(Model_2,self).__init__()
     self.conv1=nn.Sequential(nn.Conv2d(1,32,3),  #26, rf=3
                              nn.ReLU(),  
                              nn.BatchNorm2d(32),
@@ -76,3 +76,88 @@ class Model_2(nn.Module):
     x=self.trans2(x)
     x=x.view(-1,10)
     return F.log_softmax(x,dim=-1)
+
+class Model_3(nn.Module):
+  def __init__(self):
+    super(Model_3,self).__init__()
+    self.conv1=nn.Sequential(nn.Conv2d(1,8,3),  #26, rf=3
+                             nn.ReLU(),
+                             nn.BatchNorm2d(8),
+              
+                             nn.Conv2d(8,12,3), #24 , 5
+                             nn.ReLU(),
+                             nn.BatchNorm2d(12),
+                            
+                             nn.MaxPool2d(2,2),  #12 , 6
+                             nn.Conv2d(12,14,3),  #10 , 10
+                             nn.ReLU(),
+                             nn.BatchNorm2d(14),
+                             
+                             )
+    self.trans1=nn.Sequential(
+                              nn.Conv2d(14,8,1)
+                              )
+    self.conv2=nn.Sequential(
+                             nn.Conv2d(8,12,3), #8, 14
+                             nn.ReLU(),
+                             nn.BatchNorm2d(12),
+                             
+                             nn.Conv2d(12,16,3),  #6, 18
+                             nn.ReLU(),
+                             nn.BatchNorm2d(16),
+                             nn.MaxPool2d(2,2),  #3 , 19
+                             nn.Conv2d(16,16,3) , #1, 27
+                             )
+    self.trans2=nn.Sequential(
+                              nn.Conv2d(16,10,1))
+  def forward(self,x):
+    x=self.conv1(x)
+    x=self.trans1(x)
+    x=self.conv2(x)
+    x=self.trans2(x)
+    x=x.view(-1,10)
+    return F.log_softmax(x,dim=-1)
+
+class Model_4(nn.Module):
+  def __init__(self):
+    super(Model_4,self).__init__()
+    self.conv1=nn.Sequential(nn.Conv2d(1,8,3),  #26, rf=3
+                             nn.ReLU(),
+                             nn.BatchNorm2d(8),
+                             nn.Dropout(0.1),
+                             nn.Conv2d(8,12,3), #24 , 5
+                             nn.ReLU(),
+                             nn.BatchNorm2d(12),
+                             nn.Dropout(0.1),
+                             nn.MaxPool2d(2,2),  #12 , 6
+                             nn.Conv2d(12,14,3),  #10 , 10
+                             nn.ReLU(),
+                             nn.BatchNorm2d(14),
+                             nn.Dropout(0.1),
+                             )
+    self.trans1=nn.Sequential(
+                              nn.Conv2d(14,8,1)
+                              )
+    self.conv2=nn.Sequential(
+                             nn.Conv2d(8,12,3), #8, 14
+                             nn.ReLU(),
+                             nn.BatchNorm2d(12),
+                             nn.Dropout(0.1),
+                             nn.Conv2d(12,16,3),  #6, 18
+                             nn.ReLU(),
+                             nn.BatchNorm2d(16),
+                             nn.MaxPool2d(2,2),  #3 , 19
+                             nn.Conv2d(16,16,3) , #1, 27
+                             )
+    self.trans2=nn.Sequential(
+                              nn.Conv2d(16,10,1))
+  def forward(self,x):
+    x=self.conv1(x)
+    x=self.trans1(x)
+    x=self.conv2(x)
+    x=self.trans2(x)
+    x=x.view(-1,10)
+    return F.log_softmax(x,dim=-1)
+
+
+
