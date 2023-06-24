@@ -70,8 +70,7 @@ To complete Part 2, follow these steps:
 
 
 ## Part 2 SOLUTION:
-![Parameters](blob:https://github.com/ddcccc03-032a-43d6-be3f-02d83ff5a1a8)
+![Screenshot 2023-06-10 012105 (2)](https://github.com/Jaydeep-singh-1999/ERA-V1/assets/135359624/4011f55b-4448-4054-b9be-579896a24fc7)
 
-![Validation Accuracy](blob:https://github.com/34f672ce-c230-4da9-b745-4b84f43ec754)
 
 
