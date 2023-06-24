@@ -68,6 +68,9 @@ To complete Part 2, follow these steps:
 
 4. GitHub Repository: Create a public GitHub repository for this assignment. Upload the modified code to the repository, ensuring
 
+# Part 1 Solution:
+![download](https://github.com/Jaydeep-singh-1999/ERA-V1/assets/135359624/ae793b70-a384-45c2-b688-4a169e06066a)
+
 
 ## Part 2 SOLUTION:
 ![Screenshot 2023-06-10 012105 (2)](https://github.com/Jaydeep-singh-1999/ERA-V1/assets/135359624/4011f55b-4448-4054-b9be-579896a24fc7)
