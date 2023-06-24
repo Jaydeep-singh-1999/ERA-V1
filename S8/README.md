@@ -118,8 +118,9 @@ Feel free to dive into the code for further details on implementation and usage 
 
 ## 2. Layer Normalization
 
-
+![LN](https://github.com/Jaydeep-singh-1999/ERA-V1/assets/135359624/960e2e61-10b0-4d8f-a93c-20c51ff7a8ba)
 ### Parameters:48,810
+
 ### Training Accuracy = 68.59
 ### Test Accuracy= 71.13
 
