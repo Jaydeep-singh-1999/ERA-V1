@@ -56,7 +56,7 @@ Upload your complete assignment on GitHub and share the link on LMS
 ### observation : Here also underfitting.
 
 
-### 3.Group Normalisation
+## 3.Group Normalisation
 
 ![GN](https://github.com/Jaydeep-singh-1999/ERA-V1/assets/135359624/7af7a276-1c14-4cf9-baf6-39673ae07c3e)
 
