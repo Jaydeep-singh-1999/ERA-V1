@@ -40,8 +40,29 @@ Upload your complete assignment on GitHub and share the link on LMS
 
 ![Screenshot 2023-06-24 020201](https://github.com/Jaydeep-singh-1999/ERA-V1/assets/135359624/9a0ba711-cebc-4a42-a877-52d4e53853ff)
 
+### Parameters:48,810
+###  Training Accuracy = 70.53
+###  Test Accuracy= 72 
+
+### Observation: Most the time model is underfitting because i have used drop out and performed image random crop and random horizonatal flip.
+
+## 2. Layer Normalization
 
 
+### Parameters:48,810
+### Training Accuracy = 68.59
+### Test Accuracy= 71.13
+
+### observation : Here also underfitting.
 
 
+### 3.Group Normalisation
 
+![GN](https://github.com/Jaydeep-singh-1999/ERA-V1/assets/135359624/7af7a276-1c14-4cf9-baf6-39673ae07c3e)
+
+
+### Parameters:48,810
+### Training Accuracy:68.17
+### Test Accuracy: 71.02
+
+### Observation: we can also see little bit of underfitting 
