@@ -72,5 +72,6 @@ To complete Part 2, follow these steps:
 ## Part 2 SOLUTION:
 ![Screenshot 2023-06-10 012105 (2)](https://github.com/Jaydeep-singh-1999/ERA-V1/assets/135359624/4011f55b-4448-4054-b9be-579896a24fc7)
 
+![Screenshot 2023-06-10 014841 (2)](https://github.com/Jaydeep-singh-1999/ERA-V1/assets/135359624/16f5db83-5ead-407c-8ae4-953f2528abd4)
 
 
