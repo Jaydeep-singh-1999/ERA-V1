@@ -112,7 +112,113 @@ class LN_model(nn.Module):
     x=x.view(-1,10)
     return F.log_softmax(x,dim=-1)
 
+class GN_model(nn.Module):
+  def __init__(self):
+    super(GN_model,self).__init__()
+    self.conv1=nn.Sequential(nn.Conv2d(3,16,3),  # rf=3, 30
+                             nn.ReLU(),
+                             nn.GroupNorm(2,16),
+                             #nn.Dropout2d(0.05),
+                             nn.Conv2d(16,32,3), #rf=5, 28
+                             nn.ReLU(),
+                             nn.GroupNorm(2,32),
+                             #nn.Dropout2d(0.05),
+                             )
+    self.trans1=nn.Sequential(nn.Conv2d(32,16,1), #rf=5, 28
+                              nn.MaxPool2d(2,2)  #rf=6, 14
+                              )
+    self.conv2=nn.Sequential(nn.Conv2d(16,16,3,padding=1), #rf=10,14
+                             nn.ReLU(),
+                             nn.GroupNorm(2,16),
+                             #nn.Dropout2d(0.05),
+                             nn.Conv2d(16,32,3,padding=1), #rfr=14,14
+                             nn.ReLU(),
+                             nn.GroupNorm(2,32),
+                             nn.Conv2d(32,32,3), #rf=18,12
+                             nn.ReLU(),
+                             nn.GroupNorm(2,32),
+                             nn.Dropout2d(0.05),
+                             )
+    self.trans2=nn.Sequential(nn.Conv2d(32,16,1),
+                              nn.MaxPool2d(2,2)   #rf=20,6
+                              )
+    self.conv3=nn.Sequential(nn.Conv2d(16,16,3,padding=1), #rf=28,6
+                             nn.ReLU(),
+                             nn.GroupNorm(2,16),
+                             #nn.Dropout2d(0.05),
+                             nn.Conv2d(16,32,3,padding=1), #rf=36,6
+                             nn.ReLU(),
+                             nn.GroupNorm(2,32),
+                             nn.Conv2d(32,64,3,padding=1) #rf=44, 6
+                             )
+    self.Gap=nn.AvgPool2d(6)
+    self.fc1=nn.Conv2d(64,10,1)
+  def forward(self,x):
+    x=self.conv1(x)
+    x=self.trans1(x)
+    x=self.conv2(x)
+    x=self.trans2(x)
+    x=self.conv3(x)
+    x=self.Gap(x)
+    x=self.fc1(x)
+    x=x.view(-1,10)
+    return F.log_softmax(x,dim=-1)
+  
+  class Add_layer(nn.Module):
+    def __init__(self):
+      super(Add_layer,self).__init__()
+      self.conv1=nn.Sequential(nn.Conv2d(3,16,3,padding=1),  # rf=3, 32
+                              nn.ReLU(),
+                              nn.BatchNorm2d(16),
+                              # nn.Dropout2d(0.05),
+                              nn.Conv2d(16,32,3,padding=1), #rf=5, 32
+                              nn.ReLU(),
+                              nn.BatchNorm2d(32),
+                              # nn.Dropout2d(0.05),
+                              )
+      self.trans1=nn.Sequential(nn.Conv2d(32,16,1), #rf=5, 32
+                                nn.MaxPool2d(2,2)  #rf=6, 16  now our x is 16 channel =16
+                                )  
+      self.conv2=nn.Sequential(nn.Conv2d(16,16,3,padding=1), #rf=10,16
+                              nn.ReLU(),
+                              nn.BatchNorm2d(16),
+                              # nn.Dropout2d(0.05),
+                              nn.Conv2d(16,32,3,padding=1), #rfr=14,16
+                              nn.ReLU(),
+                              nn.BatchNorm2d(32),
+                              nn.Conv2d(32,32,3,padding=1), #rf=18,16
+                              nn.ReLU(),
+                              nn.BatchNorm2d(32),
+                              # nn.Dropout2d(0.05),
+                              nn.Conv2d(32,16,1)      
+                              )
+      self.trans2=nn.Sequential(
+                                nn.MaxPool2d(2,2)   #rf=20,8 channel=16
+                                )
+      self.conv3=nn.Sequential(nn.Conv2d(16,16,3,padding=1), #rf=28,8
+                              nn.ReLU(),
+                              nn.BatchNorm2d(16),
+                              nn.Dropout2d(0.05),
+                              nn.Conv2d(16,32,3,padding=1), #rf=36,8
+                              nn.ReLU(),
+                              nn.BatchNorm2d(32),
+                              nn.Conv2d(32,64,3,padding=1), #rf=44, 8
+                              nn.Conv2d(64,16,1)   
+                              )
+      self.Gap=nn.AvgPool2d(8)
+      self.fc1=nn.Conv2d(16,10,1)
+    def forward(self,x):
+      x=self.conv1(x)
+      x=self.trans1(x)
+      x=x+self.conv2(x)
+      x=self.trans2(x)
+      x=x+self.conv3(x)
+      x=self.Gap(x)
+      x=self.fc1(x)
+      x=x.view(-1,10)
+      return F.log_softmax(x,dim=-1)
 
+#Assignment 06 Architecture
 
 class Net(nn.Module):
   def __init__(self):
@@ -179,6 +285,7 @@ class Net(nn.Module):
 
     return F.log_softmax(x)
 
+#Assignment 07 - total 10 architectures
 
 class Model_1(nn.Module):
   def __init__(self):
