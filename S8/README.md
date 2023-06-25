@@ -68,6 +68,9 @@ The `LN` class implements Layer Normalization, which normalizes the inputs acros
 
 The `GN` class implements Group Normalization, which divides channels into groups and computes mean and variance for each group separately. It can be an alternative to batch normalization under specific circumstances.
 
+### Add_layer
+This class is implimentation of x+conv(x).
+
 # S8.ipynb
 
 The `s8.ipynb` file contains code related to data loading, transformations, and the training loop for multiple epochs.
@@ -104,6 +107,8 @@ The model has been trained for 20 epochs. An epoch refers to one complete pass t
 
 Feel free to dive into the code for further details on implementation and usage instructions.
 
+---
+
 # Results: 
 
 ##  1.Batch Normalization
@@ -137,3 +142,11 @@ Feel free to dive into the code for further details on implementation and usage 
 ### Test Accuracy: 71.02
 
 ### Observation: we can also see little bit of underfitting 
+
+## 4. Addding Layers (x+conv(x)) in BN 
+
+![Add_layers](https://github.com/Jaydeep-singh-1999/ERA-V1/assets/135359624/82ccd4d8-b782-4512-ba91-21752e8c3383)
+### Parameters : 49370
+### Training Accuracy:78.08
+### Test Accuracy: 78.17
+
